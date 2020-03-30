@@ -1,0 +1,7 @@
+{
+  "name": "Simplinize",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

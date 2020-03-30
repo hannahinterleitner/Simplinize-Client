@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-title>Neuer Kurs</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+        <div class="input-container">
+  
+            <ion-item lines="none">
+                <ion-icon name="person"></ion-icon>
+                <ion-input type="date" name="from" placeholder="From"
+                           [formControl]="form.controls['from']"></ion-input>
+            </ion-item>
+            <br>
+            <ion-item lines="none">
+              <ion-icon name="person"></ion-icon>
+              <ion-input type="date" name="to" placeholder="To"
+                         [formControl]="form.controls['to']"></ion-input>
+          </ion-item>
+  
+            <br>
+            <ion-item lines="none">
+                <ion-icon name="lock"></ion-icon>
+                <ion-input type="date" name="assigned" placeholder="Assigned"
+                           [formControl]="form.controls['assigned']"></ion-input>
+            </ion-item>
+  
+            <br>
+            <ion-item lines="none">
+              <ion-icon name="lock"></ion-icon>
+              <ion-input type="text" name="place" placeholder="Place"
+                         [formControl]="form.controls['place']"></ion-input>
+          </ion-item>
+  
+          <br>
+          <ion-item lines="none">
+            <ion-icon name="lock"></ion-icon>
+            <ion-input type="text" name="instructor" placeholder="Instructor"
+                       [formControl]="form.controls['instructor']"></ion-input>
+        </ion-item>
+
+          <br>
+  
+            <ion-button [disabled]="!form.valid" expand="block" type="submit">
+                Kurs erstellen
+            </ion-button>
+        </div>
+  
+  
+    </form>
+  </ion-content>

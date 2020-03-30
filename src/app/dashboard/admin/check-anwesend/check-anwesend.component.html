@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="secondary">
+      <ion-button (click)="showModal()">
+        <ion-icon name="person-add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Anwesenheit
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll-y="false">
+      <ion-list *ngFor="let courseParticipation of this.coursePartgelb">
+        <ion-item (click)="openPopUp(coursePartgelb.student)">
+          <ion-label>{{courseParticipation.student.firstName + " " + courseParticipation.student.lastName}}</ion-label>
+          <ion-checkbox></ion-checkbox><br><br>
+         </ion-item>
+      </ion-list>
+
+      <ion-list *ngFor="let courseParticipation of this.coursePartgruen">
+        <ion-item (click)="openPopUp(coursePartgruen.student)">
+          <ion-label>{{courseParticipation.student.firstName + " " + courseParticipation.student.lastName}}</ion-label>
+          <ion-checkbox></ion-checkbox><br><br>
+         </ion-item>
+      </ion-list>
+
+      <ion-list *ngFor="let courseParticipation of this.coursePartlila">
+        <ion-item (click)="openPopUp(coursePartlila.student)">
+          <ion-label>{{courseParticipation.student.firstName + " " + courseParticipation.student.lastName}}</ion-label>
+          <ion-checkbox></ion-checkbox><br><br>
+        </ion-item>
+      </ion-list>
+
+      <ion-list *ngFor="let courseParticipation of this.coursePartorange">
+        <ion-item (click)="openPopUp(coursePartorange.student)">
+          <ion-label>{{courseParticipation.student.firstName + " " + courseParticipation.student.lastName}}</ion-label>
+          <ion-checkbox></ion-checkbox><br><br>
+         </ion-item>
+      </ion-list>
+
+      <ion-list *ngFor="let courseParticipation of this.coursePartdef">
+        <ion-item (click)="openPopUp(coursePartdef.student)">
+          <ion-label>{{courseParticipation.student.firstName + " " + courseParticipation.student.lastName}}</ion-label>
+          <ion-checkbox></ion-checkbox><br><br>
+         </ion-item>
+      </ion-list>
+
+</ion-content>

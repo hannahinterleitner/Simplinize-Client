@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-title>Lehrer erstellen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-image" scroll-y="false">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="input-container">
+
+          <ion-item lines="none">
+              <ion-icon name="person"></ion-icon>
+              <ion-input type="text" name="firstname" placeholder="Firstname"
+                         [formControl]="form.controls['firstname']"></ion-input>
+          </ion-item>
+
+          <br>
+          <ion-item lines="none">
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" name="lastname" placeholder="Lastname"
+                       [formControl]="form.controls['lastname']"></ion-input>
+        </ion-item>
+
+        <br>
+          <ion-item lines="none">
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" name="username" placeholder="Username"
+                       [formControl]="form.controls['username']"></ion-input>
+        </ion-item>
+
+        <br>
+        <ion-item lines="none">
+          <ion-icon name="person"></ion-icon>
+          <ion-input type="email" name="email" placeholder="Email"
+                     [formControl]="form.controls['Email']"></ion-input>
+      </ion-item>
+
+      <br>
+          <ion-item lines="none">
+              <ion-icon name="lock"></ion-icon>
+              <ion-input type="password" name="password" placeholder="Password"
+                         [formControl]="form.controls['password']"></ion-input>
+          </ion-item>
+
+          <br>
+
+          <ion-button [disabled]="!form.valid" expand="block" type="submit">
+              Lehrer erstellen
+          </ion-button>
+      </div>
+
+
+  </form>
+</ion-content>

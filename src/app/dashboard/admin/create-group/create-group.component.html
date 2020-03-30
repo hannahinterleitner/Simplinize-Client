@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-title>Neue Gruppe</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+        <div class="input-container">
+  
+            <ion-item lines="none">
+                <ion-icon name=""></ion-icon>
+                <ion-input type="text" name="participants" placeholder="Participants"
+                           [formControl]="form.controls['participants']"></ion-input>
+            </ion-item>
+          
+
+          <br>
+  
+            <ion-button (click)="onSubmit(participants)">
+                Gruppe erstellen
+            </ion-button>
+        </div>
+  
+  
+    </form>
+  </ion-content>

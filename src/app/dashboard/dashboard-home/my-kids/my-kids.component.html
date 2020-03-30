@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-title>Create Child</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="input-container">
+
+          <ion-item lines="none">
+              <ion-icon name="person"></ion-icon>
+              <ion-input type="text" name="firstname" placeholder="Vorname"
+                         [formControl]="form.controls['firstname']"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item lines="none">
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" name="lastname" placeholder="Nachname"
+                       [formControl]="form.controls['lastname']"></ion-input>
+        </ion-item>
+
+          <br>
+          <ion-item lines="none">
+              <ion-icon name="lock"></ion-icon>
+              <ion-input type="text" name="geburtstag" placeholder="Geburtstag"
+                         [formControl]="form.controls['date']"></ion-input>
+          </ion-item>
+
+          <br>
+          <ion-item lines="none">
+            <ion-icon name="lock"></ion-icon>
+            <ion-input type="text" name="postcode" placeholder="Postcode"
+                       [formControl]="form.controls['postcode']"></ion-input>
+        </ion-item>
+
+        <br>
+        <ion-item lines="none">
+          <ion-icon name="lock"></ion-icon>
+          <ion-input type="text" name="place" placeholder="Place"
+                     [formControl]="form.controls['place']"></ion-input>
+      </ion-item>
+      <br>
+        <ion-item lines="none">
+          <ion-icon name="lock"></ion-icon>
+          <ion-input type="text" name="housenumber" placeholder="Housenumber"
+                     [formControl]="form.controls['housenumber']"></ion-input>
+      </ion-item>
+      <br>
+        <ion-item lines="none">
+          <ion-icon name="lock"></ion-icon>
+          <ion-input type="text" name="street" placeholder="Street"
+                     [formControl]="form.controls['street']"></ion-input>
+      </ion-item>
+
+      <br>
+        <ion-item lines="none">
+          <ion-icon name="lock"></ion-icon>
+          <ion-input type="text" name="gender" placeholder="Gender"
+                     [formControl]="form.controls['gender']"></ion-input>
+      </ion-item>
+
+        <br>
+
+          <ion-button [disabled]="!form.valid" expand="block" type="submit">
+              Kind erstellen
+          </ion-button>
+      </div>
+
+
+  </form>
+</ion-content>
+
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-title>Meine Kinder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let kid of kids">
+        <ion-label>{{kid.firstName + ' ' + kid.lastName}}</ion-label>
+        <ion-button (click)="registerChild(kid.id)">
+          Kind anmelden
+      </ion-button>
+      </ion-item>
+    </ion-list>
+</ion-card>
+</ion-content>

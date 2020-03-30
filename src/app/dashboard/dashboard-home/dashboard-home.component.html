@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon name="chatbubbles"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="primary">
+            <ion-button>
+                <ion-button (click)="onClickActionSheet()">
+                    <ion-icon name="menu"></ion-icon>
+                </ion-button>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Ski-Kurs</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{this.dataService.course.from}} - {{this.dataService.course.to}}<br>
+                        110 Kinder <br>
+                        Ort:
+                        {{" " + this.dataService.course.place}} <br>
+                        Instruktor:
+                        {{" " + this.dataService.course.instructor.firstName + " " + this.dataService.course.instructor.lastName}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row class="align-items-center">
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Meine Gruppe [{{this.dataService.group.proficiency}}]</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p>{{this.dataService.group.participants}} Kinder</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

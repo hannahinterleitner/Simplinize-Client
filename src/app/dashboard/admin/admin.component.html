@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button menu="menu"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>
+            Admin
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" menuId="menu" content-id="content" id="menu">
+    <ion-header>
+        <ion-toolbar color="dark">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+                <ion-button (click)="checkAnwesend()">
+                        Anwesenheit kontrollieren
+                </ion-button>
+                <ion-button (click)="enterRacetimes()">
+                        Rennstart einteilen
+                </ion-button>
+                <ion-button (click)="createTeacher()">
+                        Lehrer erstellen
+                </ion-button>
+                <ion-button (click)="createCourse()">
+                        Kurs erstellen
+                </ion-button>
+                <ion-button (click)="addTeacher()">
+                        Lehrer zuteilen
+                </ion-button>
+                <ion-button (click)="createGroup()">
+                        Neue Gruppe
+                </ion-button>
+                <ion-button (click)="addGroup()">
+                        Gruppen hinzufügen
+                </ion-button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-content id="content">
+
+</ion-content>
+
+
+<ion-router-outlet></ion-router-outlet>
+
+
+
+    

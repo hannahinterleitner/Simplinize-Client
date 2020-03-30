@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Race
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="false">
+    <ion-item>
+      <ion-label>Startzeit:</ion-label><br>
+      <ion-label>{{group.starttime}}</ion-label>
+    </ion-item>
+
+      <ion-list *ngFor="let groupParticipation of this.dataService.groupParticipations">
+        <ion-item (click)="openPopUp(groupParticipation.student)">
+          <ion-label>{{groupParticipation.student.firstName + " " + groupParticipation.student.lastName + " " + groupParticipation.time}}</ion-label>
+        </ion-item>
+      </ion-list>
+</ion-content>
+
+

@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="secondary">
+        <ion-button (click)="showModal()">
+          <ion-icon name="person-add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        Rennzeiten eintragen
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content scroll-y="false">
+
+
+    <ion-list *ngFor="let group of groups">
+        <ion-label>{{group.proficiency}}</ion-label>
+        <ion-list *ngFor="let teacher of Teachers">
+            <ion-label>{{teacher.firstname + ' ' + teacher.lastnamw}}</ion-label>
+            <ion-button (click)="speichern(group.id, teacher.id)" expand="block" type="submit">Hinzufügen</ion-button>
+        </ion-list>
+    </ion-list>
+
+
+
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Rating
+    </ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content scroll-y="false">
+    <ion-list *ngFor="let groupParticipation of this.dataService.groupParticipations">
+        <ion-label>{{groupParticipation.student.firstName + " " + groupParticipation.student.lastName}}</ion-label>
+        <ion-input type="text" name="bewertung" placeholder="Bewertung"></ion-input>
+        <ion-button (click)="speichern(groupParticipation.student.id, bewertung)" expand="block" type="submit">Speichern</ion-button>
+    </ion-list>
+</ion-content>
+
+
+

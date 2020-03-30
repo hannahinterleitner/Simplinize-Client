@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-image" scroll-y="false">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="input-container">
+
+            <ion-item lines="none">
+                <ion-icon name="person"></ion-icon>
+                <ion-input type="text" name="username" placeholder="Username"
+                           [formControl]="form.controls['username']"></ion-input>
+
+                <!--
+                <ion-badge color="dark" *ngIf="form.controls.username.errors?.required">
+                    Username is required
+                </ion-badge>
+                <ion-badge color="dark" *ngIf="form.controls.username.errors?.pattern">
+                    No valid Username
+                </ion-badge>
+                -->
+            </ion-item>
+
+            <br>
+            <ion-item lines="none">
+                <ion-icon name="lock"></ion-icon>
+                <ion-input type="password" name="password" placeholder="Password"
+                           [formControl]="form.controls['password']"></ion-input>
+                <!--
+                <ion-badge color="dark" *ngIf="form.controls.password.errors?.required">
+                    Password is required
+                </ion-badge>
+                -->
+            </ion-item>
+
+            <br>
+
+            <ion-button [disabled]="!form.valid" expand="block" type="submit">
+                Login
+            </ion-button>
+            <ion-button (click)="register(username, password)"  [disabled]="!form.valid" expand="block">
+                Register
+            </ion-button>
+            
+            <ion-button routerLink="/dashboard">Go to dashboard</ion-button>
+        </div>
+
+
+    </form>
+</ion-content>

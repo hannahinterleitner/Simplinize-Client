@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>
+      Selection
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+        <ion-list>
+          <ion-item *ngFor="let courseParticipation of courseParticipants">
+            <ion-label>{{courseParticipation.student.firstName + ' ' + courseParticipation.student.lastName}}</ion-label>
+            <ion-checkbox (change)="addChecked(courseParticipation.student)" slot="end"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+  </ion-card>
+</ion-content>
+<ion-button (click)="add()" id="save">Speichern</ion-button>
