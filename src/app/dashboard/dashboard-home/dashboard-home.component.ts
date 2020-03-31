@@ -88,6 +88,14 @@ export class DashboardHomeComponent implements OnInit {
                     console.log('');
                     this.router.navigate(['dashboard/home/enterResults']);
                 }
+            },
+            {
+                text: 'Log out',
+                //icon: 'log-out',
+                role: 'destructive',
+                handler: () => {
+                    this.authenticationService.logout();
+                }
             }
             ]
         });
