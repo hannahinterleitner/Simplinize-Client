@@ -57,7 +57,7 @@ const routes: Routes = [
               { path: 'checkAnwesend', component: CheckAnwesendComponent},
               { path: 'createTeacher', component: CreateTeacherComponent},
               { path: 'enterRacetimes', component: EnterRacetimesComponent},
-              { path: 'newCourse', component: NewCourseComponent},
+              { path: 'createCourse', component: NewCourseComponent},
               { path: 'addGroup', component: AddGroupComponent},
               { path: 'addTeacher', component: AddTeacherComponent},
               { path: 'createGroup', component: CreateGroupComponent}
